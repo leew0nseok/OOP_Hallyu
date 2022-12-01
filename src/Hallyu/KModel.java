@@ -5,6 +5,11 @@ public class KModel implements PrintDatas{
     public String detail; //정보(성별, 성별, 개봉일, 몇부작, 종류)
     public String rank; //선호 순위
 
+    public KModel(String rank, String name) {
+        this.rank = rank;
+        this.name = name;
+    }
+
     public KModel(String rank, String name, String detail) {
         this.rank = rank;
         this.name = name;

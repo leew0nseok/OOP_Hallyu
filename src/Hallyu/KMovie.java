@@ -50,7 +50,7 @@ public class KMovie extends KModel{
     }
     @Override
     public void print() {
-        System.out.println("선호순위 : " + this.getRank() + ", 영화 제목: " + this.getName());
+        System.out.println("선호순위 : " + this.getRank() + "위, 영화 제목: " + this.getName());
         System.out.println("개봉년도: "+ this.getDetail() + "장르: " + this.getGenre() + ", 러닝타임: " + this.getTime());
 
     }

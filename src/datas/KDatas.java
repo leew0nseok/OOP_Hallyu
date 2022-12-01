@@ -26,11 +26,11 @@ public class KDatas{
             new KMovie("5", "싱크홀", "2021년", "코미디, 재난", "1시간 53분")
     };
     public final static KActor[] kactorlist = {
-            new KActor("1", "이민호", "남성", "35세", "꽃보다 남자"),
-            new KActor("2", "현빈", "남성", "40세", "시크릿 가든"),
-            new KActor("3", "공유", "남성", "43세", "도깨비"),
-            new KActor("4", "송혜교", "여성", "41세", "태양의 후예"),
-            new KActor("5", "송중기", "남성", "37세", "늑대소년")
+            new KActor("1", "이민호", Gender.MAN, "35세", "꽃보다 남자"),
+            new KActor("2", "현빈", Gender.MAN, "40세", "시크릿 가든"),
+            new KActor("3", "공유", Gender.MAN, "43세", "도깨비"),
+            new KActor("4", "송혜교", Gender.WOMAN, "41세", "태양의 후예"),
+            new KActor("5", "송중기", Gender.MAN, "37세", "늑대소년")
     };
     public final static KDrama[] kdramalist = {
             new KDrama("1", "오징어 게임", "2021년", "데스 게임, 서바이벌", "9부작"),

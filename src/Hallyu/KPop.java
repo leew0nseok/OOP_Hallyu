@@ -48,7 +48,7 @@ public class KPop extends KModel{
     }
     @Override
     public void print() {
-        System.out.println("선호순위 : " + this.getRank() + ", 그룹 이름: " + this.getName());
+        System.out.println("선호순위 : " + this.getRank() + "위, 그룹 이름: " + this.getName());
         System.out.println("그룹 구성: " + this.getDetail() + ", 대표곡: " + this.getSong());
 
     }

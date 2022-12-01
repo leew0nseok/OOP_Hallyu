@@ -3,9 +3,11 @@ package Hallyu;
 public class KActor extends KModel{
     public String work;
     public String age;
+    public Gender gender;
 
-    public KActor(String rank, String name, String detail, String age, String work) {
-        super(rank, name, detail);
+    public KActor(String rank, String name, Gender gender, String age, String work) {
+        super(rank, name);
+        this.gender = gender;
         this.work = work;
         this.age = age;
     }
@@ -49,11 +51,19 @@ public class KActor extends KModel{
     public void setAge(String age) {
         this.age = age;
     }
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
 
     @Override
     public void print() {
-        System.out.println("선호순위 : " + this.getRank() + ", 배우 이름: " + this.getName());
-        System.out.println("성별 :" + this.getDetail() + ", 나이: "+ this.getAge() + ", 대표작품: " + this.getWork());
+        Gender actorgender = this.getGender();
+        System.out.println("선호순위 : " + this.getRank() + "위, 배우 이름: " + this.getName());
+        System.out.println("성별 :" + actorgender.sex + ", 나이: "+ this.getAge() + ", 대표작품: " + this.getWork());
 
     }
 }

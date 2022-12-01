@@ -48,7 +48,7 @@ public class KDrama extends KMovie{ //KDrama -> KMovie -> KModel 상속
 
     @Override
     public void print() {
-        System.out.println("선호순위 : " + this.getRank() + ", 영화 제목: " + this.getName());
+        System.out.println("선호순위 : " + this.getRank() + "위, 영화 제목: " + this.getName());
         System.out.println("방영년도: "+ this.getDetail() + "장르: " + this.getGenre() + ", 회차: " + this.getTime());
 
     }
