@@ -7,6 +7,6 @@ import java.io.IOException;
 
 public interface HallyuCommand {
     public Hallyu showMenu(Hallyu[] hallyus);
-    public KModel showModel(Hallyu menu) throws IOException;
+    public KModel showModel(Hallyu menu);
     public void showInformation(KModel infor);
     }

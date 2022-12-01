@@ -47,57 +47,65 @@ public class ConsoleCommand implements HallyuCommand{
         }
     }
 
-    public KModel showModel(Hallyu menu) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        int num = 0;
-        System.out.printf("%s%n", menu.getDetail());
-        System.out.println("----------------------");
+    public KModel showModel(Hallyu menu) {
+        try{
+            Scanner scanner = new Scanner(System.in);
+            int num = 0;
+            System.out.printf("%s%n", menu.getDetail());
+            System.out.println("----------------------");
 
-        String id = menu.getId();
-        switch (id) {
-            case "kpop":
-                System.out.println("선호 순서대로 나타낸 자료입니다.");
-                for (int i = 0; i < menu.getDatas().length; i++) {
-                    System.out.printf(menu.getDatas()[i].getRank() + "위, 가수 이름: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
-                    System.out.println();
-                }
-                System.out.println("----------------------");
-                System.out.println("궁금하신 그룹을 선택하세요(그룹이름 옆 괄호 안 숫자 입력)");
-                num = scanner.nextInt();
-                return menu.getDatas()[num - 1];
-            case "kmovie":
-                System.out.println("선호 순서대로 나타낸 자료입니다.");
-                for (int i = 0; i < menu.getDatas().length; i++) {
-                    System.out.printf(menu.getDatas()[i].getRank() + "위, 영화 제목: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
-                    System.out.println();
-                }
-                System.out.println("----------------------");
-                System.out.println("궁금하신 영화를 선택하세요(제목옆 괄호 안 숫자 입력)");
-                num = scanner.nextInt();
-                return menu.getDatas()[num - 1];
-            case "kactor":
-                System.out.println("선호 순서대로 나타낸 자료입니다.");
-                for (int i = 0; i < menu.getDatas().length; i++) {
-                    System.out.printf(menu.getDatas()[i].getRank() + "위, 배우 이름: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
-                    System.out.println();
-                }
-                System.out.println("----------------------");
-                System.out.println("궁금하신 배우를 선택하세요(이름옆 괄호 안 숫자 입력)");
-                num = scanner.nextInt();
-                return menu.getDatas()[num - 1];
-            case "kdrama":
-                System.out.println("선호 순서대로 나타낸 자료입니다.");
-                for (int i = 0; i < menu.getDatas().length; i++) {
-                    System.out.printf(menu.getDatas()[i].getRank() + "위, 드라마 제목: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
-                    System.out.println();
-                }
-                System.out.println("----------------------");
-                System.out.println("궁금하신 드라마를 선택하세요(제목옆 괄호 안 숫자 입력)");
-                num = scanner.nextInt();
-                return menu.getDatas()[num - 1];
-//            case "kfood":
-//                return 5;
-//        }
+            String id = menu.getId();
+            switch (id) {
+                case "kpop":
+                    System.out.println("선호 순서대로 나타낸 자료입니다.");
+                    for (int i = 0; i < menu.getDatas().length; i++) {
+                        System.out.printf(menu.getDatas()[i].getRank() + "위, 가수 이름: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
+                        System.out.println();
+                    }
+                    System.out.println("----------------------");
+                    System.out.println("궁금하신 그룹을 선택하세요(그룹이름 옆 괄호 안 숫자 입력)");
+                    num = scanner.nextInt();
+                    return menu.getDatas()[num - 1];
+                case "kmovie":
+                    System.out.println("선호 순서대로 나타낸 자료입니다.");
+                    for (int i = 0; i < menu.getDatas().length; i++) {
+                        System.out.printf(menu.getDatas()[i].getRank() + "위, 영화 제목: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
+                        System.out.println();
+                    }
+                    System.out.println("----------------------");
+                    System.out.println("궁금하신 영화를 선택하세요(제목옆 괄호 안 숫자 입력)");
+                    num = scanner.nextInt();
+                    return menu.getDatas()[num - 1];
+                case "kactor":
+                    System.out.println("선호 순서대로 나타낸 자료입니다.");
+                    for (int i = 0; i < menu.getDatas().length; i++) {
+                        System.out.printf(menu.getDatas()[i].getRank() + "위, 배우 이름: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
+                        System.out.println();
+                    }
+                    System.out.println("----------------------");
+                    System.out.println("궁금하신 배우를 선택하세요(이름옆 괄호 안 숫자 입력)");
+                    num = scanner.nextInt();
+                    return menu.getDatas()[num - 1];
+                case "kdrama":
+                    System.out.println("선호 순서대로 나타낸 자료입니다.");
+                    for (int i = 0; i < menu.getDatas().length; i++) {
+                        System.out.printf(menu.getDatas()[i].getRank() + "위, 드라마 제목: " + menu.getDatas()[i].getName() + "(" + Integer.toString(i + 1) + ")");
+                        System.out.println();
+                    }
+                    System.out.println("----------------------");
+                    System.out.println("궁금하신 드라마를 선택하세요(제목옆 괄호 안 숫자 입력)");
+                    num = scanner.nextInt();
+                    if(num >= 1 && num <= menu.getDatas().length) {
+                        return menu.getDatas()[num - 1];
+                    } else{
+                        throw new IndexOutOfBoundsException();
+                    }
+    //            case "kfood":
+    //                return 5;
+            }
+        } catch (Exception e){
+            System.out.println("조회 가능한 항목이 아닙니다.");
+            return showModel(menu);
         }
             return menu.getDatas()[0];
 
