@@ -2,6 +2,7 @@ package Hallyu;
 
 public class KDrama extends KMovie{ //KDrama -> KMovie -> KModel »ó¼Ó
 
+
     public KDrama(String rank, String name, String detail, String genre, String time) {
         super(rank, name, detail, genre, time);
     }
