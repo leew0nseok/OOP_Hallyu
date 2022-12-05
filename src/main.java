@@ -27,22 +27,26 @@ public class main {
             System.out.println(line);
         }
         br.close();
-        /* 아래 두 코드는 파일 입출력으로 출력 */
-//        System.out.println("--------------------------------------------");
-//        System.out.println("한류에 관심을 가져주셔서 감사합니다!!");
+        /* 아래 코드 두 줄은 파일 입출력으로 출력
+        System.out.println("--------------------------------------------");
+        System.out.println("한류에 관심을 가져주셔서 감사합니다!!");
+        */
         System.out.println("\n");
 
 
-        final ConsoleCommand command = new ConsoleCommand();
+        final ConsoleCommand command = new ConsoleCommand(); //명령어 클래스
         while(true){
             System.out.println("다음은 한류의 카테고리에 관한 설명입니다.");
             System.out.println("\n");
+            //K-POP, K-MOVIE, K-ACTOR, K-DRAMA에 대한 설명
             for (int i =0; i < kinfor.size(); i++){
                 System.out.println(kinfor.get(i) + ": " + khallyu.get(kinfor.get(i)));
             }
-            Hallyu menu = command.showMenu(GenreCategory.hallyus);
+            Hallyu menu = command.showMenu(GenreCategory.hallyus); //GenreCategory클래스에 있는 배열 hallyus를 매개변수로 전달
             KModel infor = command.showModel(menu);
             command.showInformation(infor);
        }
+
+
     }
 }

@@ -5,9 +5,7 @@ import Hallyu.KPop;
 import Hallyu.KModel;
 import datas.KDatas;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,6 +34,19 @@ public class ConsoleCommand implements HallyuCommand{
                 return hallyus[input - 1];
             }
             else if(input == -1){
+                String path = System.getProperty("user.dir") + "\\src\\"; // 현재 working dir까지 가져오고 src 경로 추가
+                Writer writer = new FileWriter(path + "complain.txt"); //complain.txt 파일에 건의사항 출력
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("프로그램을 종료하셨습니다.");
+                System.out.println("프로그램에 대한 좋은 건의사항 있으시면 적어주시면 감사하겠습니다. (없을 시 아무 문자 입력)");
+
+                String str = scanner.nextLine(); //건의사항 내용
+                writer.write(str);
+
+                writer.flush();
+                writer.close();
+
+
                 System.exit(0);
                 return hallyus[0];
             }
