@@ -5,18 +5,6 @@ import Hallyu.*;
 import java.util.*;
 
 public class KDatas {
-//    static Map<Integer, String> pops = new HashMap<>();
-//    public KDatas(){
-//        pops.put(1, "방탄소년단");
-//        pops.put(2, "블랙핑크");
-//        pops.put(3, "아이유");
-//        pops.put(4, "리사");
-//        pops.put(5, "싸이");
-//        pops.put(6, "트와이스");
-//
-//    }
-
-
     //참조타입(배열사용)
     public final static KPop[] kpoplist = {
             new KPop("1", "방탄소년단", "남성그룹", "피 땀 눈물"),
@@ -25,12 +13,6 @@ public class KDatas {
             new KPop("4", "리사", "여성솔로", "MONEY"),
             new KPop("5", "싸이", "남성솔로", "강남스타일"),
             new KPop("5", "트와이스", "여성그룹", "TT")
-//            new KPop("1", pops.get(1), "남성그룹", "피 땀 눈물"),
-//            new KPop("2", "블랙핑크", "여성그룹", "Lovesick Girls"),
-//            new KPop("3", "아이유", "여성솔로", "좋은날"),
-//            new KPop("4", "리사", "여성솔로", "MONEY"),
-//            new KPop("5", "싸이", "남성솔로", "강남스타일"),
-//            new KPop("5", "트와이스", "여성그룹", "TT")
     };
     public final static KMovie[] kmovielist = {
             new KMovie("1", "기생충", "2019년", "범죄, 스릴러", "2시간 11분 39초"),

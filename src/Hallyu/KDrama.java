@@ -47,6 +47,8 @@ public class KDrama extends KMovie{ //KDrama -> KMovie -> KModel 상속
         this.time = time;
     }
 
+
+    //메소드 오버라이딩
     @Override
     public void print() {
         System.out.println("선호순위 : " + this.getRank() + "위, 영화 제목: " + this.getName());

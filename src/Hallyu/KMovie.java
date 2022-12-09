@@ -1,6 +1,6 @@
 package Hallyu;
 
-public class KMovie extends KModel{
+public class KMovie extends KModel{ //KModel 상속(KModel의 자식클래스)
     public String genre;
     public String time;
 
@@ -48,6 +48,8 @@ public class KMovie extends KModel{
     public void setTime(String time) {
         this.time = time;
     }
+
+    //메소드 오버라이딩
     @Override
     public void print() {
         System.out.println("선호순위 : " + this.getRank() + "위, 영화 제목: " + this.getName());

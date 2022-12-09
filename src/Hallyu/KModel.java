@@ -1,6 +1,6 @@
 package Hallyu;
 
-public class KModel implements PrintDatas{
+public class KModel implements PrintDatas{ //부모클래스, PrintDatas 인터페이스 상속
     public String name; //이름(가수, 배우, 영화, 드라마, 음식)
     public String detail; //정보(성별, 성별, 개봉일, 몇부작, 종류)
     public String rank; //선호 순위
@@ -40,6 +40,7 @@ public class KModel implements PrintDatas{
         this.rank = rank;
     }
 
+    //메소드 오버라이딩
     @Override
     public void print() {
         System.out.println(this.getName() + this.getRank() + this.getDetail());

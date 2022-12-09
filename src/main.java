@@ -1,6 +1,7 @@
 import Hallyu.Hallyu;
 import Hallyu.KModel;
 import command.ConsoleCommand;
+import command.HallyuCommand;
 import genre.GenreCategory;
 
 import java.io.*;
@@ -11,7 +12,7 @@ import java.util.Map;
 
 public class main {
     public static void main(String[] args) throws IOException {
-        Map<String, String> khallyu = new HashMap<>(); //컬렉션 프레임워크 사용
+        Map<String, String> khallyu = new HashMap<>(); //컬렉션 프레임워크 사용(HashMap)
         khallyu.put("K-POP", "대한민국의 대중음악(케이팝)은 대한민국에서 대중적 인기를 얻는 유행 음악을 말한다.");
         khallyu.put("K-MOVIE", "대한민국에서 제작된 영화를 총칭해서 말하는 말.");
         khallyu.put("K-ACTOR", "대한민국의 배우를 말한다.");
@@ -20,6 +21,7 @@ public class main {
         List<String> kinfor = new ArrayList<>(khallyu.keySet()); //Map의 모든 Key를 모아서 Set자료형으로 리턴
 
         String path = System.getProperty("user.dir") + "\\src\\"; // 현재 working dir까지 가져오고 src 경로 추가
+        //파일 입력 스트림 사용
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path +"text.txt"),"utf-8"));
         while(true) {
             String line = br.readLine();
@@ -33,8 +35,8 @@ public class main {
         */
         System.out.println("\n");
 
-
-        final ConsoleCommand command = new ConsoleCommand(); //명령어 클래스
+        //final은 자료형에 값을 단 한번만 설정할수 있게 강제하는 키워드
+        final HallyuCommand command = new ConsoleCommand(); // 명령어 클래스, 자동타입변환(다형성 사용)
         while(true){
             System.out.println("다음은 한류의 카테고리에 관한 설명입니다.");
             System.out.println("\n");
@@ -43,7 +45,7 @@ public class main {
                 System.out.println(kinfor.get(i) + ": " + khallyu.get(kinfor.get(i)));
             }
             Hallyu menu = command.showMenu(GenreCategory.hallyus); //GenreCategory클래스에 있는 배열 hallyus를 매개변수로 전달
-            KModel infor = command.showModel(menu);
+            KModel infor = command.showModel(menu); //infor의 타입은 KModel이지만 다형성에 의해 KPop, KMovie, KActor, KDrama의 자식객체가 반환될 수 있음
             command.showInformation(infor);
        }
 

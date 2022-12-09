@@ -11,9 +11,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class ConsoleCommand implements HallyuCommand{
+public class ConsoleCommand implements HallyuCommand{ //인터페이스 HallyuCommand 상속
     public Hallyu showMenu(Hallyu[] hallyus) {
-        try {//예외처리 사용
+        //try - catch 예외처리 사용
+        try {
 
 //            System.out.println("Hallyu에 관한 정보입니다.");
             System.out.println("--------------------------------------------");
@@ -33,7 +34,7 @@ public class ConsoleCommand implements HallyuCommand{
             if (input >= 1 && input <= hallyus.length) {
                 return hallyus[input - 1];
             }
-            else if(input == -1){
+            else if(input == -1){ //프로그램을 종료할 시 파일 출력 스트림 사용
                 String path = System.getProperty("user.dir") + "\\src\\"; // 현재 working dir까지 가져오고 src 경로 추가
                 Writer writer = new FileWriter(path + "complain.txt"); //complain.txt 파일에 건의사항 출력
                 Scanner scanner = new Scanner(System.in);
@@ -60,7 +61,10 @@ public class ConsoleCommand implements HallyuCommand{
         }
     }
 
+    //return 타입을 KModel로 부모클래스로 설정하였고 여기서 리턴받는 값은 KPop, KMovie, KDrama, KActor 클래스가 올 수 있음(다형성)
+    //자식객체를 부모타입의 리턴객체로 보냄
     public KModel showModel(Hallyu menu) {
+        //try - catch 예외처리 사용
         try{
             Scanner scanner = new Scanner(System.in);
             int num = 0;
@@ -113,8 +117,6 @@ public class ConsoleCommand implements HallyuCommand{
                     } else{
                         throw new IndexOutOfBoundsException();
                     }
-    //            case "kfood":
-    //                return 5;
             }
         } catch (Exception e){
             System.out.println("조회 가능한 항목이 아닙니다.");
@@ -124,7 +126,7 @@ public class ConsoleCommand implements HallyuCommand{
 
     }
 
-    public void showInformation(KModel infor){
+    public void showInformation(KModel infor){ //KMOdel타입을 매개변수로 받지만 다형성에 의해 자식객체인 KPop, KMovie, KDrama, KActor 클래스가 올 수 있음
         System.out.println("\n\n");
         System.out.println(infor.getName()+"에 관한 정보입니다.");
         System.out.println("--------------------------------------------");

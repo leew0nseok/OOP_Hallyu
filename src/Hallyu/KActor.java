@@ -1,6 +1,6 @@
 package Hallyu;
 
-public class KActor extends KModel{
+public class KActor extends KModel{ //KModel 상속(KModel의 자식클래스)
     public String work;
     public String age;
     public Gender gender;
@@ -59,6 +59,8 @@ public class KActor extends KModel{
         this.gender = gender;
     }
 
+
+    //메소드 오버라이딩
     @Override
     public void print() {
         Gender actorgender = this.getGender();
