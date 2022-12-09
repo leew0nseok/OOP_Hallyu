@@ -27,6 +27,7 @@ public class ConsoleCommand implements HallyuCommand{ //인터페이스 HallyuCommand
             System.out.println();
             System.out.print("조회 할 카테고리 : ");
 
+            //InputStreamReader 보조 스트림을 연결
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             int input = Integer.parseInt(in.readLine());
 

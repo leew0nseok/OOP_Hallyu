@@ -21,7 +21,7 @@ public class main {
         List<String> kinfor = new ArrayList<>(khallyu.keySet()); //Map의 모든 Key를 모아서 Set자료형으로 리턴
 
         String path = System.getProperty("user.dir") + "\\src\\"; // 현재 working dir까지 가져오고 src 경로 추가
-        //파일 입력 스트림 사용
+        //파일 입력 스트림 사용, 보조 스트림 연결
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path +"text.txt"),"utf-8"));
         while(true) {
             String line = br.readLine();
